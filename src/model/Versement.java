@@ -1,7 +1,14 @@
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@ToString
 public class Versement extends Operation {
 
     private String source;
@@ -11,9 +18,4 @@ public class Versement extends Operation {
         this.source = source;
     }
 
-    public String getSource() {return source;}
-
-    @Override
-    public String toString() {
-        return "Versement{" + "source='" + source + '\'' + ", numero='" + numero + '\'' + ", date=" + date + ", montant=" + montant + '}';}
 }
