@@ -1,8 +1,13 @@
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 public abstract class Compte {
     protected String code;
     protected double solde;
@@ -17,10 +22,6 @@ public abstract class Compte {
     public abstract boolean retirer(double montant, String destination);
     public abstract double calculerInteret();
     public abstract void afficherDetails();
-
-    public String getCode() {return code;}
-    public double getSolde() {return solde;}
-    public List<Operation> getListeOperations() {return listeOperations;}
 
     public void ajouterOperation(Operation operation){
         this.listeOperations.add(operation);
