@@ -11,11 +11,11 @@ public class ValidationUtil {
         return code != null && CODE_Pattern.matcher(code).matches();
     }
 
-    public static boolean ValiderMontatPositif(double montant){
+    public static boolean validerMontantPositif(double montant){
         return montant > 0 ;
     }
 
-    public static boolean ValiderChaineNonVide(String chaine){
+    public static boolean validerChaineNonVide(String chaine){
             return chaine != null && !chaine.trim().isEmpty();
     }
 
