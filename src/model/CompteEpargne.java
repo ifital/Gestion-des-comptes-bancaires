@@ -1,5 +1,8 @@
 package model;
 
+import lombok.Getter;
+
+@Getter
 public class CompteEpargne extends Compte{
 
     private double tauxInteret;
@@ -12,16 +15,26 @@ public class CompteEpargne extends Compte{
 
     @Override
     public boolean retirer(double montant, String destination) {
+        if (montant > solde){
+            solde -= montant;
+            ajouterOperation(new Retrait(montant, destination));
+            return true;
+        }
         return false;
     }
 
     @Override
     public double calculerInteret() {
-        return 0;
+        return solde * (tauxInteret/100);
     }
 
     @Override
     public void afficherDetails() {
+        System.out.println("=== COMPTE EPARGNE ===");
+        System.out.println("solde" +  String.format("%.2f€", solde));
+        System.out.println("tauxInteret "+   tauxInteret + "%");
+        System.out.println("Interet calculé "+  String.format("%.2f€", calculerInteret()) );
+        System.out.println("nombre d opération "+  listeOperations.size());
 
     }
 }
