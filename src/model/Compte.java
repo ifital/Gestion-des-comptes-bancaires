@@ -31,6 +31,11 @@ public abstract class Compte {
     public abstract double calculerInteret();
     public abstract void afficherDetails();
 
+    public void verser(double montant, String source) {
+        this.solde += montant;
+        this.listeOperations.add(new Versement(montant, source));
+    }
+
     public void ajouterOperation(Operation operation){
         this.listeOperations.add(operation);
     }

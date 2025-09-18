@@ -7,6 +7,8 @@ public abstract class Operation {
 
     protected String numero;
     protected LocalDateTime date;
+    protected double montant;
+
 
     public String getNumero() {
         return numero;
@@ -19,8 +21,6 @@ public abstract class Operation {
     public double getMontant() {
         return montant;
     }
-
-    protected double montant;
 
     public Operation(String numero, LocalDateTime date, double montant) {
         this.numero = UUID.randomUUID().toString();

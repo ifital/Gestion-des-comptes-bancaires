@@ -2,17 +2,19 @@ package model;
 
 import java.time.LocalDateTime;
 
-public class Versement extends Operation {
 
+public class Versement extends Operation {
     private String source;
 
-    public String getSource() {
-        return source;
-    }
-
-    public Versement(String numero, LocalDateTime date, double montant, String source) {
-        super(numero, date, montant);
+    public Versement(double montant, String source) {
+        super(montant);
         this.source = source;
     }
 
+    public String getSource() { return source; }
+
+    @Override
+    public String toString() {
+        return "VERSEMENT - " + super.toString() + ", Source: " + source;
+    }
 }
