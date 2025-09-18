@@ -7,7 +7,7 @@ public class InputUtil {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public static int LireEntier(String message){
+    public static int lireEntier(String message){
 
         while (true){
             try{
@@ -20,7 +20,7 @@ public class InputUtil {
         }
     }
 
-    public  static double LireDouble(String message){
+    public  static double lireDouble(String message){
         while (true) {
             try {
                 System.out.print(message);

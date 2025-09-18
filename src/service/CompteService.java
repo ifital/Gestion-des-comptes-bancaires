@@ -4,6 +4,8 @@ import model.Compte;
 import model.CompteCourant;
 import model.CompteEpargne;
 
+import util.ValidationUtil;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,14 +15,16 @@ public class CompteService {
 
     private HashMap<String, Compte> comptes = new HashMap<>();
 
-    public String CreerCompteCourant(double decouvert){
-        CompteCourant c = new CompteCourant(decouvert);
+    public String creerCompteCourant(double decouvert) {
+        String code = ValidationUtil.genererCodeCompte(5);
+        CompteCourant c = new CompteCourant(code, decouvert);
         comptes.put(c.getCode(), c);
         return c.getCode();
     }
 
-    public String creerCompteEpargne(double taux){
-        CompteEpargne c = new CompteEpargne(taux);
+    public String creerCompteEpargne(double taux) {
+        String code = ValidationUtil.genererCodeCompte(5);
+        CompteEpargne c = new CompteEpargne(code, taux);
         comptes.put(c.getCode(), c);
         return c.getCode();
     }
@@ -29,7 +33,7 @@ public class CompteService {
         return Optional.ofNullable(comptes.get(code));
     }
 
-    public List<Compte> ListerTousLesComptes(){
+    public List<Compte> listerTousLesComptes(){
         return new ArrayList<>(comptes.values());
     }
 

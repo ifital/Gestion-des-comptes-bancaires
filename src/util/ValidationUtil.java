@@ -7,7 +7,7 @@ public class ValidationUtil {
 
     private static final Pattern CODE_Pattern = Pattern.compile("CPT-\\d{5}");
 
-    public static boolean ValiderCodeCompte(String code){
+    public static boolean validerCodeCompte(String code){
         return code != null && CODE_Pattern.matcher(code).matches();
     }
 
@@ -19,7 +19,7 @@ public class ValidationUtil {
             return chaine != null && !chaine.trim().isEmpty();
     }
 
-    public  static String GenererCodeCompte(int numero){
+    public  static String genererCodeCompte(int numero){
         return String.format("CPT-05d" + numero);
     }
 }
