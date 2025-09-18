@@ -1,11 +1,12 @@
 package model;
 
-import lombok.Getter;
-
-@Getter
 public class CompteCourant extends Compte {
 
     private double decouvert;
+
+    public double getDecouvert() {
+        return decouvert;
+    }
 
     public CompteCourant(String code, double decouvert) {
         super(code);

@@ -53,4 +53,3 @@ public class InputUtil {
     public static void fermerScanner() { scanner.close(); }
 }
 
-}

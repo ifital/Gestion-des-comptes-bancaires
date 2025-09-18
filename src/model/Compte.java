@@ -1,19 +1,25 @@
 package model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
-@ToString
+
 public abstract class Compte {
     protected String code;
     protected double solde;
     protected List<Operation> listeOperations;
+
+    public String getCode() {
+        return code;
+    }
+
+    public double getSolde() {
+        return solde;
+    }
+
+    public List<Operation> getListeOperations() {
+        return listeOperations;
+    }
 
     public Compte(String code) {
         this.code = code;

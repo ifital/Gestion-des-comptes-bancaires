@@ -1,9 +1,10 @@
 package model;
 
-import lombok.Getter;
-
-@Getter
 public class CompteEpargne extends Compte{
+
+    public double getTauxInteret() {
+        return tauxInteret;
+    }
 
     private double tauxInteret;
 
