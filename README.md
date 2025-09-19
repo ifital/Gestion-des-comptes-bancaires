@@ -10,6 +10,8 @@ L’objectif est de pratiquer la programmation orientée objet, la gestion des e
 
 ## 🏗 Structure du projet
 
+```bash
+
 Gestion des comptes bancaires/
 ├── src/
 │ ├── model/
