@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class ValidationUtil {
 
-    private static final Pattern CODE_Pattern = Pattern.compile("CPT-\\d{5}");
+    private static final Pattern CODE_Pattern = Pattern.compile("CPT-[A-Z0-9]{5}");
 
     public static boolean validerCodeCompte(String code){
         return code != null && CODE_Pattern.matcher(code).matches();
@@ -21,6 +21,6 @@ public class ValidationUtil {
     }
 
     public static String genererCodeCompte() {
-        return "CPT-" + UUID.randomUUID().toString().substring(0, 4);
+        return "CPT-" + UUID.randomUUID().toString().substring(0, 5).toUpperCase();
     }
 }
