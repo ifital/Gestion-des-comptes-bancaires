@@ -138,6 +138,7 @@ public class MenuBancaire {
         System.out.println("=== VIREMENT ===");
         String codeSource = InputUtil.lireChaineNonVide("Code du compte source : ");
         String codeDestination = InputUtil.lireChaineNonVide("Code du compte destination : ");
+        double montant = InputUtil.lireDouble("Montant à verser1 : ");
 
         if (!ValidationUtil.validerCodeCompte(codeSource) ||
                 !ValidationUtil.validerCodeCompte(codeDestination)) {
@@ -150,7 +151,6 @@ public class MenuBancaire {
             return;
         }
 
-        double montant = InputUtil.lireDouble("Montant à virer : ");
 
         if (operationService.effectuerVirement(codeSource, codeDestination, montant)) {
             System.out.println("Virement effectué avec succès !");
