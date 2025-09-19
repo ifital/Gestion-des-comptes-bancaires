@@ -16,14 +16,14 @@ public class CompteService {
     private HashMap<String, Compte> comptes = new HashMap<>();
 
     public String creerCompteCourant(double decouvert) {
-        String code = ValidationUtil.genererCodeCompte(5);
+        String code = ValidationUtil.genererCodeCompte();
         CompteCourant c = new CompteCourant(code, decouvert);
         comptes.put(c.getCode(), c);
         return c.getCode();
     }
 
     public String creerCompteEpargne(double taux) {
-        String code = ValidationUtil.genererCodeCompte(5);
+        String code = ValidationUtil.genererCodeCompte();
         CompteEpargne c = new CompteEpargne(code, taux);
         comptes.put(c.getCode(), c);
         return c.getCode();

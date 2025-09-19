@@ -214,7 +214,6 @@ public class MenuBancaire {
         System.out.println("Intérêts totaux (comptes épargne) : " + String.format("%.2f€", interetsTotal));
     }
 
-    // ✅ méthode utilitaire ajoutée pour Java 8
     private static String repeat(String s, int count) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < count; i++) {

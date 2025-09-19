@@ -1,6 +1,7 @@
 package util;
 
 import java.util.Stack;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class ValidationUtil {
@@ -19,7 +20,7 @@ public class ValidationUtil {
             return chaine != null && !chaine.trim().isEmpty();
     }
 
-    public  static String genererCodeCompte(int numero){
-        return String.format("CPT-05d" + numero);
+    public static String genererCodeCompte() {
+        return "CPT-" + UUID.randomUUID().toString().substring(0, 4);
     }
 }

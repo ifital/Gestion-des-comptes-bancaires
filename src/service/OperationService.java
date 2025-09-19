@@ -50,8 +50,4 @@ public class OperationService {
                 .map(Compte::getListeOperations)
                 .orElse(Collections.emptyList());
     }
-
-
-
-
 }
